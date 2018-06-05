@@ -21,8 +21,9 @@ public class ServerServiceImpl implements ServerService {
 
 	@Override
 	public int createServer(Server server) {
-		// TODO Auto-generated method stub
-		return 0;
+		server.id=0;
+		serverRepository.save(server);
+		return server.id;
 	}
 
 	@Override

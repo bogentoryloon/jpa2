@@ -18,8 +18,8 @@ public class Server {
 
 
 
-	public Server(int id, String name ){
-		this.id = id;
+	public Server(String name,String description ){
+		this.description = description;
 		this.name = name;
 	}	
 
