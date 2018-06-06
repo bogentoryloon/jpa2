@@ -80,8 +80,13 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-test</artifactId>
     <scope>test</scope>
-</dependency>   
-
+</dependency>
+<!--  veruy nice springframework shell -->   
+        <dependency>
+            <groupId>org.springframework.shell</groupId>
+            <artifactId>spring-shell</artifactId>
+            <version>1.2.0.RELEASE</version>
+        </dependency>
 
     </dependencies>
 
