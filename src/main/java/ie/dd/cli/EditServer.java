@@ -22,7 +22,7 @@ public class EditServer extends CliCommand {
 			if( tokens.length < 3) {
 				result.setOutput(help);
 			}else {
-				Server server=new Server(tokens[2],tokens[3]);
+				Server server=new Server(tokens[2],flatten(tokens,3));
 				server.setId(Long.parseLong(tokens[1]));
 				result.setHandled( serverService.editServer(server) );
 				result.setOutput(server.toString());

@@ -10,12 +10,12 @@ public class CountServers extends CliCommand {
 	@Autowired
 	ServerService serverService;
 	private CountServers() {
-		super(1,"list, to itemise all servers");
+		super(1,"how many servers do we have");
 	}
 	@Override
 	public Result handleLine(String line) {
 		if( "count".equals(line )) {
-			return new Result(true,Long.toString(serverService.countServers()));
+			return new Result(true,String.format("There are %d servers",serverService.countServers()));
 		}
 		return new Result(false);
 	}
