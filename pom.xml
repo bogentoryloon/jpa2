@@ -4,8 +4,8 @@
   http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mkyong</groupId>
-    <artifactId>spring-boot-jpa-oracle-example</artifactId>
+    <groupId>ie.dd</groupId>
+    <artifactId>servermgr</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
 
@@ -17,6 +17,8 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <!--  downgraded to run on 1.8, see https://stackoverflow.com/questions/37555557/m2e-error-in-mavenarchiver-getmanifest -->
+        <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
     </properties>
 
 		

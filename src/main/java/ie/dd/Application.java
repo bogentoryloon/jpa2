@@ -10,9 +10,13 @@ import ie.dd.services.ServerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
@@ -23,6 +27,8 @@ import static java.lang.System.exit;
 
 @Configuration
 @EnableAutoConfiguration
+@ComponentScan
+
 public class Application implements CommandLineRunner {
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -66,7 +72,7 @@ public class Application implements CommandLineRunner {
 
         System.out.println("Done!");
 
-        exit(0);
+//        exit(0);
     }
 
 }
