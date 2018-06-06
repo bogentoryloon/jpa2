@@ -1,7 +1,7 @@
 package ie.dd.model;
 
+import javax.crypto.SealedObject;
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 public class Server {
@@ -10,33 +10,32 @@ public class Server {
 	@Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SERVER_SEQ")
     @SequenceGenerator(sequenceName = "server_seq", initialValue = 1, allocationSize = 1, name = "SERVER_SEQ")
-	public int id;
-	public String name;
-	public String description;
+    private long id;
+	private String name;
+	private String description;
 
-	public Server(){}
-
-
-
+    // needed by JPA
+    public Server(){
+    }
 	public Server(String name,String description ){
-		this.description = description;
-		this.name = name;
+		this.setDescription(description);
+		this.setName(name);
 	}	
 
 
     @Override
     public String toString() {
-        return "Server{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + "\'}";
+        return "Server(" +
+                "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", description='" + getDescription() + "\')";
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -48,4 +47,11 @@ public class Server {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

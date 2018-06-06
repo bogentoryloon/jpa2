@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Stream;
 
-public interface ServerRepository extends CrudRepository<Server, Integer> {
+public interface ServerRepository extends CrudRepository<Server, Long> {
 
 
 }

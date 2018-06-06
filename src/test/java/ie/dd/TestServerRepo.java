@@ -32,14 +32,13 @@ public class TestServerRepo {
     public void testBasics() {
         Server s = new Server("mr server", "not for long");
         s = this.serverRepository.save(s);
-        Assert.assertNotEquals(s.id, 0);
-        Optional<Server> reread = this.serverRepository.findById(s.id);
+        Assert.assertNotEquals(s.getId(), 0);
+        Optional<Server> reread = this.serverRepository.findById(s.getId());
         Assert.assertTrue(reread.isPresent());
         Server actual = reread.get();
-        Assert.assertEquals(s.name, actual.name);
+        Assert.assertEquals(s.getName(), actual.getName());
         // trawl the db
         Iterable<Server> all = this.serverRepository.findAll();
         Assert.assertEquals(3, all.spliterator().getExactSizeIfKnown());
     }
-
 }
