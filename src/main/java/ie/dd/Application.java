@@ -1,11 +1,12 @@
 package ie.dd;
 
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 
 import ie.dd.cli.CliCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-//import org.mvnsearch.spring.boot.shell.BootShim;  << an abortive attempt to graft spring shell in
+import java.io.InputStreamReader;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,7 +38,8 @@ public class Application implements CommandLineRunner {
 		// so went old skool just to get the job done.
 		while (running) {
 			DataInputStream in = new DataInputStream(System.in);
-			String line = in.readLine();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+			String line = reader.readLine();
 			CliCommand.Result result = vocab.process(line);
 			if (!result.isHandled()) {
 				System.out.println(vocab.listCommands());

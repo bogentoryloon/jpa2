@@ -27,8 +27,8 @@ public class Server {
     public String toString() {
         return "Server(" +
                 "id=" + getId() +
-                ", name='" + getName() + '\'' +
-                ", description='" + getDescription() + "\')";
+                ",name='" + getName() + '\'' +
+                ",description='" + getDescription() + "')";
     }
 
     public long getId() {

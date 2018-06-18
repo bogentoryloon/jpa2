@@ -21,14 +21,18 @@ public abstract class CliCommand implements Comparable<CliCommand>{
 		return help==null?"unavailable":help;
 	}
 
-	// TODO sure there is a smarter way to do this e.g. varargs
+
 	protected String flatten( String arr[],int from){
 		StringBuffer s=new StringBuffer();
 		for( int i=from;i<arr.length;++i){
-			s.append(arr[i]+" ");
+			s.append(arr[i]);
+			if( i<(arr.length-1)){
+				s.append(" ");
+			}
 		}
 		return s.toString();
 	}
+
 
 	static public class Result{
 		private boolean handled;
